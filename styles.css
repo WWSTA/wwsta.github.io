@@ -9,58 +9,98 @@ html {
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-    background-color: #0d1117;
-    color: #c9d1d9;
-    line-height: 1.5;
+    font-family: "Source Serif Pro", "Noto Serif SC", "Iowan Old Style", Charter, Georgia, serif;
+    background-color: #f5f4ed;
+    color: #1f1d18;
+    line-height: 1.45;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
-    max-width: 1012px;
+    max-width: 860px;
     margin: 0 auto;
-    padding: 0 16px;
+    padding: 0 32px;
 }
 
+/* ===== HEADER ===== */
 .site-header {
-    background-color: #161b22;
-    border-bottom: 1px solid #21262d;
-    padding: 16px 0;
+    background-color: #f5f4ed;
+    border-bottom: 1px solid #d4d1c5;
+    padding: 20px 0;
     position: sticky;
     top: 0;
     z-index: 100;
 }
 
+.site-header .container {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.logotype {
+    font-family: "Source Serif Pro", "Noto Serif SC", serif;
+    font-style: italic;
+    font-size: 20px;
+    font-weight: 400;
+    color: #1B365D;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+}
+
 .site-nav {
     display: flex;
-    gap: 24px;
-    justify-content: center;
+    gap: 28px;
 }
 
 .nav-link {
-    color: #c9d1d9;
+    color: #6b665b;
     text-decoration: none;
     font-size: 14px;
-    font-weight: 500;
-    transition: color 0.2s ease;
+    font-weight: 400;
+    transition: color 0.2s;
+    position: relative;
 }
 
 .nav-link:hover {
-    color: #ffffff;
+    color: #1B365D;
 }
 
+.nav-link.active {
+    color: #1B365D;
+}
+
+/* ===== SECTIONS ===== */
 .section {
-    padding: 64px 0;
+    padding: 72px 0;
 }
 
-.section-title {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 32px;
-    color: #ffffff;
+.section-header {
+    margin-bottom: 48px;
 }
 
+.kicker {
+    font-family: "Source Serif Pro", "Noto Serif SC", serif;
+    font-size: 11px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #1B365D;
+    margin-bottom: 8px;
+}
+
+.section-sub {
+    font-size: 16px;
+    color: #6b665b;
+    font-weight: 400;
+}
+
+/* ===== ABOUT ===== */
 .about-section {
-    background-color: #0d1117;
+    padding-top: 80px;
+    border-bottom: 1px solid #d4d1c5;
 }
 
 .about-content {
@@ -68,16 +108,17 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 32px;
+    gap: 40px;
 }
 
 .avatar {
-    width: 160px;
-    height: 160px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
-    border: 1px solid #30363d;
     overflow: hidden;
-    background-color: #161b22;
+    border: 1px solid #d4d1c5;
+    background-color: #efeee5;
+    flex-shrink: 0;
 }
 
 .avatar img {
@@ -87,32 +128,38 @@ body {
 }
 
 .bio {
-    max-width: 600px;
+    max-width: 520px;
 }
 
 .name {
-    font-size: 32px;
-    font-weight: 600;
-    color: #ffffff;
-    margin-bottom: 4px;
+    font-family: "Source Serif Pro", "Noto Serif SC", serif;
+    font-size: 36px;
+    font-weight: 500;
+    color: #1f1d18;
+    line-height: 1.1;
+    margin-bottom: 6px;
 }
 
-.username {
-    font-size: 20px;
-    color: #8b949e;
+.tagline {
+    font-size: 15px;
+    color: #1B365D;
     margin-bottom: 16px;
+    font-weight: 400;
 }
 
 .description {
     font-size: 16px;
+    color: #6b665b;
+    line-height: 1.55;
     margin-bottom: 32px;
 }
 
-.skills h2 {
-    font-size: 18px;
-    font-weight: 600;
+.skills {
+    text-align: center;
+}
+
+.skills .kicker {
     margin-bottom: 16px;
-    color: #ffffff;
 }
 
 .skill-list {
@@ -125,196 +172,217 @@ body {
 
 .skill-tag {
     display: inline-block;
-    padding: 4px 12px;
-    background-color: #21262d;
-    border: 1px solid #30363d;
-    border-radius: 24px;
+    padding: 4px 14px;
+    background-color: #efeee5;
+    border: 1px solid #d4d1c5;
     font-size: 12px;
-    color: #58a6ff;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
+    color: #1f1d18;
+    font-weight: 400;
+    transition: border-color 0.2s, background-color 0.2s;
 }
 
 .skill-tag:hover {
-    background-color: #30363d;
-    border-color: #58a6ff;
+    border-color: #1B365D;
+    background-color: #f5f4ed;
 }
 
+/* ===== PROJECTS ===== */
 .projects-section {
-    background-color: #0d1117;
-    border-top: 1px solid #21262d;
-    border-bottom: 1px solid #21262d;
+    background-color: #efeee5;
+    border-bottom: 1px solid #d4d1c5;
 }
 
 .projects-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 1px;
+    background-color: #d4d1c5;
+    border: 1px solid #d4d1c5;
 }
 
 .project-card {
-    background-color: #0d1117;
-    border: 1px solid #30363d;
-    border-radius: 6px;
-    padding: 24px;
-    transition: border-color 0.2s ease, transform 0.2s ease;
+    background-color: #f5f4ed;
+    padding: 28px 28px 24px;
+    transition: background-color 0.2s;
 }
 
 .project-card:hover {
-    border-color: #8b949e;
-    transform: translateY(-2px);
+    background-color: #faf9f5;
 }
 
-.project-header {
+.project-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+}
+
+.project-top {
     display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 8px;
-}
-
-.repo-icon {
-    color: #8b949e;
-    flex-shrink: 0;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 10px;
 }
 
 .project-name {
-    font-size: 16px;
-    font-weight: 600;
-    color: #58a6ff;
+    font-family: "Source Serif Pro", "Noto Serif SC", serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #1B365D;
+    line-height: 1.2;
 }
 
-.project-name:hover {
-    text-decoration: underline;
+.project-stack {
+    font-size: 11px;
+    color: #6b665b;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 400;
+    padding: 2px 8px;
+    background-color: #efeee5;
+    border: 1px solid #d4d1c5;
 }
 
-.project-description {
+.project-desc {
     font-size: 14px;
-    color: #8b949e;
-    margin-bottom: 16px;
+    color: #6b665b;
+    line-height: 1.5;
+    margin-bottom: 14px;
+}
+
+.project-meta {
+    margin-bottom: 14px;
+}
+
+.meta-item {
+    font-size: 11px;
+    color: #1B365D;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 400;
 }
 
 .project-links {
     display: flex;
-    gap: 12px;
-}
-
-.project-link {
-    display: inline-flex;
     align-items: center;
-    gap: 4px;
-    font-size: 12px;
-    color: #c9d1d9;
+    gap: 0;
+}
+
+.link-github,
+.link-demo {
+    font-size: 13px;
+    font-weight: 400;
+    color: #1B365D;
     text-decoration: none;
-    padding: 4px 12px;
-    background-color: #21262d;
-    border: 1px solid #30363d;
-    border-radius: 6px;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
+    transition: opacity 0.2s;
 }
 
-.project-link:hover {
-    background-color: #30363d;
-    border-color: #8b949e;
+.link-github:hover,
+.link-demo:hover {
+    opacity: 0.7;
 }
 
-.demo-link {
-    background-color: #238636;
-    border-color: #238636;
-    color: #ffffff;
+.link-divider {
+    display: inline-block;
+    width: 1px;
+    height: 12px;
+    background-color: #d4d1c5;
+    margin: 0 12px;
 }
 
-.demo-link:hover {
-    background-color: #2ea043;
-    border-color: #2ea043;
-}
-
+/* ===== CONTACT ===== */
 .contact-section {
-    background-color: #0d1117;
+    background-color: #f5f4ed;
 }
 
 .contact-content {
     display: flex;
-    flex-direction: column;
-    gap: 24px;
-    align-items: center;
+    justify-content: center;
 }
 
-.contact-item {
+.contact-card {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
+    padding: 36px 56px;
+    background-color: #efeee5;
+    border: 1px solid #d4d1c5;
+    text-decoration: none;
+    transition: border-color 0.2s;
+}
+
+.contact-card:hover {
+    border-color: #1B365D;
 }
 
 .contact-icon {
-    color: #8b949e;
-    flex-shrink: 0;
+    color: #1B365D;
 }
 
-.contact-link {
-    font-size: 16px;
-    color: #58a6ff;
-    text-decoration: none;
-    transition: text-decoration 0.2s ease;
+.contact-label {
+    font-family: "Source Serif Pro", "Noto Serif SC", serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #1f1d18;
 }
 
-.contact-link:hover {
-    text-decoration: underline;
+.contact-handle {
+    font-size: 13px;
+    color: #6b665b;
+    font-weight: 400;
 }
 
-.github-contact {
-    flex-direction: column;
-    gap: 16px;
-}
-
-.github-contact .contact-link {
-    font-size: 24px;
-    font-weight: 600;
-}
-
-.github-contact .contact-icon {
-    color: #58a6ff;
-}
-
+/* ===== FOOTER ===== */
 .site-footer {
-    background-color: #0d1117;
-    border-top: 1px solid #21262d;
+    background-color: #f5f4ed;
+    border-top: 1px solid #d4d1c5;
     padding: 40px 0;
     text-align: center;
 }
 
-.site-footer p {
-    font-size: 12px;
-    color: #8b949e;
+.footer-rule {
+    width: 40px;
+    height: 1px;
+    background-color: #d4d1c5;
+    margin: 0 auto 20px;
 }
 
-@media (min-width: 768px) {
+.colophon {
+    font-size: 12px;
+    color: #6b665b;
+    font-weight: 400;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (min-width: 640px) {
     .about-content {
         flex-direction: row;
         text-align: left;
         align-items: flex-start;
     }
 
-    .avatar {
-        width: 200px;
-        height: 200px;
-        flex-shrink: 0;
+    .skills {
+        text-align: left;
     }
 
     .skill-list {
         justify-content: flex-start;
     }
 
+    .avatar {
+        width: 160px;
+        height: 160px;
+    }
+
     .projects-grid {
         grid-template-columns: 1fr 1fr;
     }
-
-    .contact-content {
-        flex-direction: row;
-        justify-content: center;
-    }
 }
 
-@media (min-width: 1012px) {
+@media (min-width: 860px) {
     .section {
-        padding: 80px 0;
+        padding: 88px 0;
+    }
+
+    .name {
+        font-size: 42px;
     }
 }
