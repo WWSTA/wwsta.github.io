@@ -7,7 +7,7 @@
    ============================================================ */
 
 window.SNAPSHOT = {
-  generatedAt: "2026-10-31T12:53:59Z",
+  generatedAt: "2026-10-31T14:06:04Z",
   user: {
     login: "WWSTA",
     name: null,
@@ -20,6 +20,17 @@ window.SNAPSHOT = {
     htmlUrl: "https://github.com/WWSTA"
   },
   repos: [
+    {
+      name: "wwsta.github.io",
+      description: null,
+      fork: false,
+      stargazers: 0,
+      forks: 0,
+      language: "JavaScript",
+      htmlUrl: "https://github.com/WWSTA/wwsta.github.io",
+      homepage: "https://wwsta.github.io/",
+      updatedAt: "2026-10-31T14:02:15Z"
+    },
     {
       name: "MTN-Web",
       description: null,
@@ -107,17 +118,6 @@ window.SNAPSHOT = {
       htmlUrl: "https://github.com/WWSTA/BBDown-GUI",
       homepage: null,
       updatedAt: "2026-06-20T08:13:44Z"
-    },
-    {
-      name: "wwsta.github.io",
-      description: null,
-      fork: false,
-      stargazers: 0,
-      forks: 0,
-      language: "HTML",
-      htmlUrl: "https://github.com/WWSTA/wwsta.github.io",
-      homepage: "https://wwsta.github.io/",
-      updatedAt: "2026-06-19T14:38:47Z"
     },
     {
       name: "html-anything",
