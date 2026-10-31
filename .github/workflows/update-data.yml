@@ -1,0 +1,42 @@
+# 每日自动更新静态数据快照（js/data.js，含各仓库 About 的 homepage / 体验地址）
+# 安全说明：只使用 GitHub Actions 内置的临时 GITHUB_TOKEN —— 它在运行时自动签发、
+# 仅本次 job 有效、job 结束即失效；workflow 中只出现占位符，不存在泄露问题。
+# 不使用任何个人访问令牌（PAT），脚本也绝不打印 token。
+name: update data snapshot
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # UTC 00:00（北京时间 08:00）
+  workflow_dispatch: # 允许手动触发
+
+permissions:
+  contents: write # 最小权限：仅允许写本仓库内容
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: regenerate js/data.js from GitHub API
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python .github/scripts/update_data.py
+
+      - name: commit and push if changed
+        run: |
+          if git diff --quiet -- js/data.js; then
+            echo "快照无变化，跳过提交"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add js/data.js
+            git commit -m "chore: 每日更新项目数据快照"
+            git push
+          fi
