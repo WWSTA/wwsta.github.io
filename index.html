@@ -1,209 +1,137 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WWSTA · Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500&family=Source+Serif+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WWSTA · 个人主页</title>
+  <meta name="description" content="WWSTA 的个人主页：数据统计、技术栈、项目（热门/原创/克隆）与评论区（基于 GitHub Issues）。">
+  <meta name="color-scheme" content="light dark">
+  <!-- 主题初始化：在 CSS 加载前应用，避免刷新闪烁 -->
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("theme"); } catch (e) {}
+      if (t !== "light" && t !== "dark") {
+        t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+      }
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+  <!-- 网页图标：使用 WWSTA 的 GitHub 头像 -->
+  <link rel="icon" type="image/png" href="assets/avatar.png">
+  <link rel="apple-touch-icon" href="assets/avatar.png">
+  <link rel="stylesheet" href="css/style.css?v=3">
 </head>
 <body>
-    <header class="site-header">
-        <div class="container">
-            <a href="#about" class="logotype">WWSTA</a>
-            <nav class="site-nav">
-                <a href="#about" class="nav-link">关于</a>
-                <a href="#projects" class="nav-link">项目</a>
-                <a href="#contact" class="nav-link">联系</a>
-            </nav>
+
+  <div class="container">
+
+    <!-- Hero：头像 + 打字机 + 概要信息 -->
+    <section class="hero" aria-label="个人简介">
+      <img class="hero-avatar" src="https://avatars.githubusercontent.com/u/228279328?v=4" alt="WWSTA 的头像"
+           width="160" height="160" onerror="this.onerror=null;this.src='assets/avatar.png'">
+      <div class="hero-body">
+        <div class="hero-title-row">
+          <h1 class="hero-name">WWSTA</h1>
+          <span class="hero-badge">👋 个人主页</span>
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="切换主题" title="切换主题"></button>
         </div>
-    </header>
-
-    <main>
-        <section id="about" class="section about-section">
-            <div class="container">
-                <div class="about-content">
-                    <div class="avatar">
-                        <img src="https://avatars.githubusercontent.com/u/228279328?v=4" alt="个人头像" />
-                    </div>
-                    <div class="bio">
-                        <h1 class="name">WWSTA</h1>
-                        <p class="tagline">全栈开发者 · 开源爱好者</p>
-                        <p class="description">
-                            专注于构建优雅且高效的 Web 应用，热爱开源社区的协作与分享。
-                        </p>
-                        <div class="skills">
-                            <h2 class="kicker">技能栈</h2>
-                            <ul class="skill-list">
-                                <li><span class="skill-tag">JavaScript</span></li>
-                                <li><span class="skill-tag">TypeScript</span></li>
-                                <li><span class="skill-tag">React</span></li>
-                                <li><span class="skill-tag">Vue</span></li>
-                                <li><span class="skill-tag">Node.js</span></li>
-                                <li><span class="skill-tag">HTML5</span></li>
-                                <li><span class="skill-tag">CSS3</span></li>
-                                <li><span class="skill-tag">Git</span></li>
-                                <li><span class="skill-tag">Python</span></li>
-                                <li><span class="skill-tag">Electron</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="section projects-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="kicker">作品集</h2>
-                    <p class="section-sub">精选开源项目</p>
-                </div>
-
-                <div class="projects-grid">
-
-                    <article class="project-card">
-                        <div class="project-top">
-                            <h3 class="project-name">MTN-Web</h3>
-                            <span class="project-stack">Web</span>
-                        </div>
-                        <p class="project-desc">纯浏览器端 ONNX 推理的 TTS 语音合成，0.1B 参数模型，无需服务器，支持 20 种语言与声音克隆。</p>
-                        <div class="project-meta">
-                            <span class="meta-item">Frontend</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/WWSTA/MTN-Web" target="_blank" rel="noopener noreferrer" class="link-github">GitHub</a>
-                            <span class="link-divider"></span>
-                            <a href="https://wwsta.github.io/MTN-Web/" target="_blank" rel="noopener noreferrer" class="link-demo">体验</a>
-                        </div>
-                    </article>
-
-                    <article class="project-card">
-                        <div class="project-top">
-                            <h3 class="project-name">html-anything</h3>
-                            <span class="project-stack">HTML</span>
-                        </div>
-                        <p class="project-desc">面向 Agent 的 HTML 模板库，收录 78 套模板、13 个分类，涵盖简历、报告、PPT、海报与仪表盘。</p>
-                        <div class="project-meta">
-                            <span class="meta-item">Creative</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/WWSTA/html-anything" target="_blank" rel="noopener noreferrer" class="link-github">GitHub</a>
-                            <span class="link-divider"></span>
-                            <a href="https://wwsta.github.io/html-anything/" target="_blank" rel="noopener noreferrer" class="link-demo">体验</a>
-                        </div>
-                    </article>
-
-                    <article class="project-card">
-                        <div class="project-top">
-                            <h3 class="project-name">wuziqi</h3>
-                            <span class="project-stack">Game</span>
-                        </div>
-                        <p class="project-desc">经典五子棋游戏，支持人机对弈，智能 AI 算法带来富有挑战性的对局体验。</p>
-                        <div class="project-meta">
-                            <span class="meta-item">AI</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/WWSTA/wuziqi" target="_blank" rel="noopener noreferrer" class="link-github">GitHub</a>
-                            <span class="link-divider"></span>
-                            <a href="https://wwsta.github.io/wuziqi/" target="_blank" rel="noopener noreferrer" class="link-demo">体验</a>
-                        </div>
-                    </article>
-
-                    <article class="project-card">
-                        <div class="project-top">
-                            <h3 class="project-name">MD</h3>
-                            <span class="project-stack">Editor</span>
-                        </div>
-                        <p class="project-desc">简洁优雅的 Markdown 编辑器，支持实时预览与语法高亮，让写作回归专注。</p>
-                        <div class="project-meta">
-                            <span class="meta-item">Tool</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/WWSTA/MD" target="_blank" rel="noopener noreferrer" class="link-github">GitHub</a>
-                            <span class="link-divider"></span>
-                            <a href="https://wwsta.github.io/MD/" target="_blank" rel="noopener noreferrer" class="link-demo">体验</a>
-                        </div>
-                    </article>
-
-                    <article class="project-card">
-                        <div class="project-top">
-                            <h3 class="project-name">BBDown-GUI</h3>
-                            <span class="project-stack">Desktop</span>
-                        </div>
-                        <p class="project-desc">BBDown 的图形化桌面客户端，让视频下载操作更加直观便捷。</p>
-                        <div class="project-meta">
-                            <span class="meta-item">Electron</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/WWSTA/BBDown-GUI" target="_blank" rel="noopener noreferrer" class="link-github">GitHub</a>
-                        </div>
-                    </article>
-
-                    <article class="project-card">
-                        <div class="project-top">
-                            <h3 class="project-name">GameHub</h3>
-                            <span class="project-stack">Game</span>
-                        </div>
-                        <p class="project-desc">汇集多款经典小游戏的在线平台，基于 HTML5 技术，打开即玩，无需安装。</p>
-                        <div class="project-meta">
-                            <span class="meta-item">Platform</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/WWSTA/GameHub" target="_blank" rel="noopener noreferrer" class="link-github">GitHub</a>
-                            <span class="link-divider"></span>
-                            <a href="https://wwsta.github.io/GameHub/" target="_blank" rel="noopener noreferrer" class="link-demo">体验</a>
-                        </div>
-                    </article>
-
-                    <article class="project-card">
-                        <div class="project-top">
-                            <h3 class="project-name">WebMC</h3>
-                            <span class="project-stack">3D</span>
-                        </div>
-                        <p class="project-desc">在浏览器中运行的体素风格世界，展示 WebGL 与 Three.js 的渲染能力。</p>
-                        <div class="project-meta">
-                            <span class="meta-item">WebGL</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/WWSTA/WebMC" target="_blank" rel="noopener noreferrer" class="link-github">GitHub</a>
-                            <span class="link-divider"></span>
-                            <a href="https://wwsta.github.io/WebMC/" target="_blank" rel="noopener noreferrer" class="link-demo">体验</a>
-                        </div>
-                    </article>
-
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="section contact-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="kicker">联系方式</h2>
-                </div>
-                <div class="contact-content">
-                    <a href="https://github.com/WWSTA" target="_blank" rel="noopener noreferrer" class="contact-card">
-                        <span class="contact-icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
-                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
-                            </svg>
-                        </span>
-                        <span class="contact-label">GitHub</span>
-                        <span class="contact-handle">@WWSTA</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-rule"></div>
-            <p class="colophon">&copy; 2026 WWSTA &mdash; Built with care. Hosted on GitHub Pages.</p>
+        <p class="typing-line" aria-label="欢迎语">
+          <span id="typing-text"></span><span class="typing-cursor" aria-hidden="true"></span>
+        </p>
+        <p class="hero-meta" id="hero-meta"></p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" id="follow-btn" href="https://github.com/WWSTA" target="_blank" rel="noopener">
+            <svg class="octicon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M2 5.5a3.5 3.5 0 1 1 5.898 2.549 5.508 5.508 0 0 1 3.034 4.084.75.75 0 1 1-1.482.235 4 4 0 0 0-7.9 0 .75.75 0 0 1-1.482-.236A5.507 5.507 0 0 1 3.102 8.05 3.493 3.493 0 0 1 2 5.5ZM11 4a3.001 3.001 0 0 1 2.22 5.018 5.01 5.01 0 0 1 2.56 3.012.749.749 0 0 1-.885.954.752.752 0 0 1-.549-.514 3.507 3.507 0 0 0-2.522-2.372.75.75 0 0 1-.578-.73v-.353a.75.75 0 0 1 .432-.678A1.5 1.5 0 0 0 11 5.5.75.75 0 0 1 11 4Zm-5.5-.5a2 2 0 1 0-.001 3.999A2 2 0 0 0 5.5 3.5Z"></path></svg>
+            Follow @WWSTA
+          </a>
+          <a class="btn btn-outline" href="https://github.com/WWSTA?tab=repositories" target="_blank" rel="noopener">
+            <svg class="octicon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path></svg>
+            查看全部仓库
+          </a>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <script src="script.js"></script>
+    <!-- 数据统计（GitHub API 本地计算，替代 metrics 面板） -->
+    <section class="section" aria-label="数据统计">
+      <h2 class="section-title">📊 数据统计</h2>
+      <div class="stats-grid" id="stats-grid"></div>
+    </section>
+
+    <!-- 语言分布（本地渲染） -->
+    <section class="section" aria-label="语言分布">
+      <h2 class="section-title">📈 语言分布</h2>
+      <div class="lang-bar" id="lang-bar" role="img" aria-label="仓库语言分布"></div>
+      <ul class="lang-legend" id="lang-legend"></ul>
+    </section>
+
+    <!-- 技术栈（skillicons.dev，加载失败自动降级为文字徽章） -->
+    <section class="section" aria-label="技术栈">
+      <h2 class="section-title">🧑‍💻 技术栈</h2>
+      <div class="skills-wrap" id="skills-wrap">
+        <img id="skills-img" src="https://skillicons.dev/icons?i=js,html,css,py,kotlin&theme=light"
+             alt="技术栈图标：JavaScript、HTML、CSS、Python、Kotlin" loading="lazy">
+      </div>
+    </section>
+
+    <!-- 提交记录动画（由 .github/workflows/snake.yml 每日生成；未生成或无法访问时整节自动隐藏，说明见 README） -->
+    <section class="section" id="snake-section" aria-label="提交记录">
+      <h2 class="section-title">📅 提交记录</h2>
+      <img class="snake-img" id="snake-img"
+           src="https://raw.githubusercontent.com/WWSTA/wwsta.github.io/output/github_contribution_grid_snake.svg"
+           alt="GitHub 提交记录动画" loading="lazy">
+    </section>
+
+    <!-- 项目：热门 / 我的 / 克隆 -->
+    <section class="section" aria-label="项目">
+      <h2 class="section-title">📦 项目</h2>
+      <nav class="tabs" id="tabs" role="tablist" aria-label="项目分类">
+        <button class="tab is-selected" id="tab-hot" role="tab" aria-selected="true" data-tab="hot" type="button">
+          <svg class="octicon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Zm0 2.445L6.615 5.5a.75.75 0 0 1-.564.41l-3.097.45 2.24 2.184a.75.75 0 0 1 .216.664l-.528 3.084 2.769-1.456a.75.75 0 0 1 .698 0l2.77 1.456-.53-3.084a.75.75 0 0 1 .216-.664l2.24-2.183-3.096-.45a.75.75 0 0 1-.564-.41L8 2.694Z"></path></svg>
+          <span>热门项目</span>
+          <span class="Counter" id="count-hot">0</span>
+        </button>
+        <button class="tab" id="tab-mine" role="tab" aria-selected="false" data-tab="mine" type="button">
+          <svg class="octicon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25a.25.25 0 0 1 .25-.25h3.5a.25.25 0 0 1 .25.25v3.25a.25.25 0 0 1-.4.2l-1.45-1.087a.249.249 0 0 0-.3 0L5.4 15.7a.25.25 0 0 1-.4-.2Z"></path></svg>
+          <span>我的项目</span>
+          <span class="Counter" id="count-mine">0</span>
+        </button>
+        <button class="tab" id="tab-forks" role="tab" aria-selected="false" data-tab="forks" type="button">
+          <svg class="octicon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.251 2.251 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"></path></svg>
+          <span>克隆项目</span>
+          <span class="Counter" id="count-forks">0</span>
+        </button>
+      </nav>
+
+      <p class="update-status" id="update-status" hidden></p>
+      <div id="repo-area" aria-live="polite"></div>
+    </section>
+
+    <!-- 文章与讨论：发布在其他社区的内容（静态数据，js/data.js） -->
+    <section class="section" aria-label="文章与讨论">
+      <h2 class="section-title">📝 文章与讨论</h2>
+      <div class="article-list" id="article-list"></div>
+    </section>
+
+    <!-- 评论区（utterances / GitHub Issues；由 app.js 按当前主题注入；未安装或无法访问时整节自动隐藏，说明见 README） -->
+    <section class="comments section" id="comments" aria-label="评论区">
+      <h2 class="section-title">💬 评论区</h2>
+      <div class="utterances-container" id="utterances-container"></div>
+    </section>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© 2026 WWSTA</span>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <span>项目数据来自 <a href="https://docs.github.com/zh/rest" target="_blank" rel="noopener">GitHub API</a></span>
+    </div>
+  </footer>
+
+  <script src="js/articles.js?v=3"></script>
+  <script src="js/data.js?v=3"></script>
+  <script src="js/app.js?v=3"></script>
 </body>
 </html>
