@@ -7,7 +7,7 @@
    ============================================================ */
 
 window.SNAPSHOT = {
-  generatedAt: "2026-11-02T04:12:27Z",
+  generatedAt: "2026-11-03T05:11:02Z",
   user: {
     login: "WWSTA",
     name: null,
@@ -21,6 +21,17 @@ window.SNAPSHOT = {
   },
   repos: [
     {
+      name: "easytier-cf-relay",
+      description: "一个部署在Cloudflare Workers的EasyTier中转节点",
+      fork: false,
+      stargazers: 41,
+      forks: 16,
+      language: "JavaScript",
+      htmlUrl: "https://github.com/WWSTA/easytier-cf-relay",
+      homepage: "https://wwsta.github.io/easytier-cf-relay-web",
+      updatedAt: "2026-11-02T14:55:02Z"
+    },
+    {
       name: "wwsta.github.io",
       description: null,
       fork: false,
@@ -29,7 +40,7 @@ window.SNAPSHOT = {
       language: "JavaScript",
       htmlUrl: "https://github.com/WWSTA/wwsta.github.io",
       homepage: "https://wwsta.github.io/",
-      updatedAt: "2026-11-01T04:08:33Z"
+      updatedAt: "2026-11-02T04:12:32Z"
     },
     {
       name: "rea",
@@ -63,17 +74,6 @@ window.SNAPSHOT = {
       htmlUrl: "https://github.com/WWSTA/PCL",
       homepage: "https://meloong.com/PCL",
       updatedAt: "2026-10-31T06:11:36Z"
-    },
-    {
-      name: "easytier-cf-relay",
-      description: "一个部署在Cloudflare Workers的EasyTier中转节点",
-      fork: false,
-      stargazers: 38,
-      forks: 15,
-      language: "JavaScript",
-      htmlUrl: "https://github.com/WWSTA/easytier-cf-relay",
-      homepage: "https://wwsta.github.io/easytier-cf-relay-web",
-      updatedAt: "2026-10-27T12:57:35Z"
     },
     {
       name: "easytier-cf-relay-web",
