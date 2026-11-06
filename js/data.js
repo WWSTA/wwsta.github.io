@@ -7,7 +7,7 @@
    ============================================================ */
 
 window.SNAPSHOT = {
-  generatedAt: "2026-11-05T04:56:50Z",
+  generatedAt: "2026-11-06T04:56:09Z",
   user: {
     login: "WWSTA",
     name: null,
@@ -21,6 +21,17 @@ window.SNAPSHOT = {
   },
   repos: [
     {
+      name: "wwsta.github.io",
+      description: null,
+      fork: false,
+      stargazers: 0,
+      forks: 0,
+      language: "JavaScript",
+      htmlUrl: "https://github.com/WWSTA/wwsta.github.io",
+      homepage: "https://wwsta.github.io/",
+      updatedAt: "2026-11-05T04:56:54Z"
+    },
+    {
       name: "easytier-cf-relay",
       description: "一个部署在Cloudflare Workers的EasyTier中转节点",
       fork: false,
@@ -30,17 +41,6 @@ window.SNAPSHOT = {
       htmlUrl: "https://github.com/WWSTA/easytier-cf-relay",
       homepage: "https://wwsta.github.io/easytier-cf-relay-web",
       updatedAt: "2026-11-04T15:16:05Z"
-    },
-    {
-      name: "wwsta.github.io",
-      description: null,
-      fork: false,
-      stargazers: 0,
-      forks: 0,
-      language: "JavaScript",
-      htmlUrl: "https://github.com/WWSTA/wwsta.github.io",
-      homepage: "https://wwsta.github.io/",
-      updatedAt: "2026-11-04T04:41:40Z"
     },
     {
       name: "rea",
