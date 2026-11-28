@@ -7,7 +7,7 @@
    ============================================================ */
 
 window.SNAPSHOT = {
-  generatedAt: "2026-11-27T06:33:05Z",
+  generatedAt: "2026-11-28T06:07:35Z",
   user: {
     login: "WWSTA",
     name: null,
@@ -25,7 +25,7 @@ window.SNAPSHOT = {
       description: "一个部署在Cloudflare Workers的EasyTier中转节点",
       fork: false,
       stargazers: 53,
-      forks: 28,
+      forks: 29,
       language: "JavaScript",
       htmlUrl: "https://github.com/WWSTA/easytier-cf-relay",
       homepage: "https://wwsta.github.io/easytier-cf-relay-web",
